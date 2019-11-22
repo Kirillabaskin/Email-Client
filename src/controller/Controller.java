@@ -208,14 +208,13 @@ public class Controller extends Application {
 
                     // Set To: header field of the header.
                     message.setRecipients(Message.RecipientType.TO,
-                            InternetAddress.parse(to));
+                            InternetAddress.parse(inputRecipientTf.getText()));
 
                     // Set Subject: header field
-                    message.setSubject("Gmail - Email Test");
+                    message.setSubject(inputSubjectTf.getText());
 
                     // Now set the actual message
-                    message.setText("Hello, this is sample email to check/send "
-                            + "email using JavaMailAPI from GMAIL");
+                    message.setText(mailComposeTa.getText());
 
                     // Send message
                     Transport.send(message);
